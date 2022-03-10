@@ -31,7 +31,10 @@ const IviHmi = () => {
   const acSrcSettingOnChange = (event) => {
     const selectedCustomizedSetting = event.target.id;
     setCustomizedSetting(selectedCustomizedSetting);
-    if (selectedCustomizedSetting == SRC_SET_ID && swsCtrlTarget == AC_ON_CTRL)
+    if (
+      selectedCustomizedSetting === SRC_SET_ID &&
+      swsCtrlTarget === AC_ON_CTRL
+    )
       setSwsCtrlTarget(INFO_ON_CTRL);
     setHuMessage(HU_INIT_MSG);
   };
@@ -55,7 +58,7 @@ const IviHmi = () => {
   };
 
   const setInstantMsg = (stateMsg, instantMsg, setMsgFn) => {
-    if (stateMsg != instantMsg) {
+    if (stateMsg !== instantMsg) {
       let preMsg = stateMsg;
       setMsgFn(instantMsg);
       setTimeout(() => {
